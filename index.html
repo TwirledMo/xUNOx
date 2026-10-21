@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>xUNOx — Deluxe UNO</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23e53935'/><text x='50' y='68' font-size='52' font-weight='bold' text-anchor='middle' fill='white' font-family='Arial'>U</text></svg>">
+</head>
+<body>
+  <div id="app">
+    <header id="topbar">
+      <div class="logo">xUNOx</div>
+      <div id="roundInfo">Ready to play</div>
+      <div id="direction" title="Play direction">↻</div>
+      <button id="soundBtn" class="iconbtn" title="Sound on/off">🔊</button>
+      <button id="homeBtn" class="iconbtn" title="Back to menu">🏠</button>
+    </header>
+
+    <main id="table">
+      <div id="opponents"></div>
+
+      <div id="center">
+        <div id="drawPile" class="pile" title="Click to draw a card">
+          <div class="card back stack2"><div class="inner"><span class="logo">xUNOx</span></div></div>
+          <div class="card back stack1"><div class="inner"><span class="logo">xUNOx</span></div></div>
+          <div class="card back top"><div class="inner"><span class="logo">xUNOx</span></div></div>
+          <span id="deckCount" class="deckcount">108</span>
+        </div>
+        <div id="discardPile" class="pile"></div>
+        <div id="colorChip" class="hidden"></div>
+      </div>
+
+      <div id="playerArea">
+        <div id="turnBanner">Your turn — play a card or draw</div>
+        <div id="playerPlate" class="plate you"></div>
+        <div id="hand"></div>
+        <button id="unoBtn" class="hidden">UNO!</button>
+      </div>
+    </main>
+
+    <div id="toasts"></div>
+    <div id="overlay" class="hidden"></div>
+  </div>
+
+  <script src="js/cards.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
