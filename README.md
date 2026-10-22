@@ -59,7 +59,8 @@ then open http://localhost:8000
 - Full official UNO rules + draw-pile reshuffling
 - UNO calls, catches, and penalties — both directions
 - Card deal/play/draw animations, speech bubbles, confetti win screen
-- Procedural sound effects (Web Audio — no audio files needed), mutable
+- Procedural sound effects + background music (Web Audio — no audio files needed),
+  with separate 🔊 SFX and 🎵 music toggles
 - Round scoring with hand breakdowns, game win screen
 - Lifetime stats saved in your browser (games, wins, rounds, cards played)
 - Works offline, runs on Mac and Windows, no dependencies
@@ -72,7 +73,7 @@ xUNOx/
 ├── css/style.css       ← table, cards, animations
 ├── js/
 │   ├── cards.js        ← deck building + card helpers
-│   ├── audio.js        ← Web Audio sound effects
+│   ├── audio.js        ← Web Audio sound effects + music
 │   ├── ai.js           ← AI opponent brains
 │   ├── game.js         ← rules, turns, UNO logic, scoring
 │   ├── ui.js           ← rendering, animations, modals

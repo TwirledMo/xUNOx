@@ -7,7 +7,7 @@ const UI = {
   init(callbacks) {
     this.callbacks = callbacks;
     const ids = [
-      'topbar', 'roundInfo', 'direction', 'soundBtn', 'homeBtn',
+      'topbar', 'roundInfo', 'direction', 'musicBtn', 'soundBtn', 'homeBtn',
       'opponents', 'drawPile', 'deckCount', 'discardPile', 'colorChip',
       'playerPlate', 'hand', 'unoBtn', 'toasts', 'overlay', 'turnBanner',
     ];
@@ -15,6 +15,12 @@ const UI = {
 
     this.el.drawPile.addEventListener('click', () => callbacks.onDeckClick());
     this.el.unoBtn.addEventListener('click', () => callbacks.onUno());
+    this.el.musicBtn.classList.toggle('off', !Music.enabled);
+    this.el.musicBtn.addEventListener('click', () => {
+      const on = Music.toggle();
+      this.el.musicBtn.classList.toggle('off', !on);
+      if (on) SFX.play('click');
+    });
     this.el.soundBtn.addEventListener('click', () => {
       SFX.muted = !SFX.muted;
       this.el.soundBtn.textContent = SFX.muted ? '🔇' : '🔊';

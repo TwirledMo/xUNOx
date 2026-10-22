@@ -73,6 +73,7 @@ body {
   transition: background 0.15s;
 }
 .iconbtn:hover { background: rgba(255, 255, 255, 0.18); }
+.iconbtn.off { opacity: 0.45; }
 
 /* ---------- Table ---------- */
 #table {

@@ -111,6 +111,7 @@ function showSetup() {
   UI.el.overlay.querySelector('#startBtn').addEventListener('click', () => {
     SFX.ensure();
     SFX.play('click');
+    if (Music.enabled && !Music.playing) Music.start();
     lastConfig = {
       playerName: Settings.data.playerName,
       aiCount: Settings.data.aiCount,
@@ -124,6 +125,13 @@ function showSetup() {
 window.addEventListener('DOMContentLoaded', () => {
   Stats.data = Stats.load();
   Settings.data = Settings.load();
+  Music.enabled = Music.load();
+
+  // Browsers block audio until the user interacts — kick the music on the first gesture.
+  document.addEventListener('pointerdown', function kick() {
+    if (Music.enabled && !Music.playing) Music.start();
+    document.removeEventListener('pointerdown', kick);
+  });
 
   UI.init({
     onCardClick: (cardId) => Game.humanPlay(cardId),
